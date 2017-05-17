@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="easyprint-cms">
+    <output-path>$PROJECT_DIR$/out/artifacts/easyprint_cms</output-path>
+    <root id="root" />
+  </artifact>
+</component>
