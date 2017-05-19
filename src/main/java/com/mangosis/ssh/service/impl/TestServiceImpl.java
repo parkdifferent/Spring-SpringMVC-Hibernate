@@ -1,11 +1,11 @@
 package com.mangosis.ssh.service.impl;
 
 import com.google.code.ssm.api.*;
-import com.google.code.yanf4j.util.SystemUtils;
 import com.mangosis.ssh.dao.TestDao;
 import com.mangosis.ssh.entity.Test;
 import com.mangosis.ssh.service.TestService;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService {
 
-    private  static Logger logger = Logger.getLogger("TestServiceImpl");
+    private  static Logger logger = LoggerFactory.getLogger("TestServiceImpl");
 
     private static final String TEST_INFO_SSM  = "test_info_ssm";
 
@@ -29,8 +29,8 @@ public class TestServiceImpl implements TestService {
 
     public List<Test> findByFirstName(String firstName) {
 
-        logger.info("TestServiceImpl -> findByFirstName");
-        logger.debug("############## A debug message from myapp logger #########");
+        logger.info("findByFirstName, firstName = {}",firstName);
+        logger.debug("新增宠物， pet = {}", firstName);
         return testDao.findByFirstName(firstName);
     }
 

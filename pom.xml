@@ -337,6 +337,27 @@
     </dependency>
 
 
+    <!--primeface-->
+    <dependency>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>6.1</version>
+    </dependency>
+
+    <!-- Faces Implementation -->
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-impl</artifactId>
+      <version>2.2.4</version>
+    </dependency>
+    <!-- Faces Library -->
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-api</artifactId>
+      <version>2.2.4</version>
+    </dependency>
+
+
   </dependencies>
 
   <repositories>
