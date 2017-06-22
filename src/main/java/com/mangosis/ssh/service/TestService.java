@@ -18,4 +18,6 @@ public interface TestService {
     Test updateById(Long id);
 
     void deleteById(Long id);
+
+    List<Test> findAll();
 }

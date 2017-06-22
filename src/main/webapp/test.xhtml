@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+                <h:form id="form">
+
+
+                    <div class="SeparatorFull" />
+
+                    <p:dataTable id="dataTable" var="test" lazy="true"
+                                 paginatorAlwaysVisible="false" value="#{testPrimefacesController.testModel}"
+                                 rows="10" emptyMessage="#{string.no_record_found}"
+                                 paginator="true" styleClass="TexAlCenter"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="10,15,50" reflow="true">
+                        <f:facet name="header">
+                            <h:outputLabel styleClass="Fs15 FontBold" value="#{string.test}" />
+                        </f:facet>
+
+
+                        <p:column headerText="id">
+                            <h:outputText value="#{test.title}" />
+                        </p:column>
+                        <p:column headerText="firstName">
+                            <h:outputText value="#{test.firstName}" />
+                        </p:column>
+                        <p:column headerText="secondName">
+                            <h:outputText value="#{test.secondName}" />
+                        </p:column>
+
+
+
+                    </p:dataTable>
+                </h:form>
+
+
+</ui:composition>

@@ -15,7 +15,7 @@ import java.util.List;
  * Created by admin on 2017/5/9.
  */
 
-@Service
+@Service("testService")
 public class TestServiceImpl implements TestService {
 
     private  static Logger logger = LoggerFactory.getLogger("TestServiceImpl");
@@ -67,4 +67,10 @@ public class TestServiceImpl implements TestService {
 
     //MultiCache 类
     //操作 List 型的 Cache 数据（看做是 SingleCache 的批处理），由 ParameterValueKeyProvider 和 CacheKeyMethod 来标识组装 key
+
+
+    @Override
+    public List<Test> findAll() {
+        return (List<Test>) testDao.findAll();
+    }
 }

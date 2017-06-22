@@ -1,5 +1,7 @@
 package com.mangosis.ssh.controller;
 
+import com.google.zxing.WriterException;
+import com.mangosis.ssh.qrcode.CrunchifyQRCode;
 import com.mangosis.ssh.util.VerifyCodeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -44,6 +47,32 @@ public class AuthImagesController {
         } catch (IOException e) {
             logger.error("验证码生成失败", e);
         }
+
+    }
+
+    @RequestMapping(value = "/qrcode/image", method = RequestMethod.GET)
+    public void genQRCode(/*String uid, */HttpServletResponse response) {
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+        response.setContentType("image/png");
+
+
+        String myCodeText = "https://crunchify.com/";
+        String filePath = "D:\\CrunchifyQR.png";
+        int size = 250;
+        String fileType = "png";
+        File myFile = new File(filePath);
+        CrunchifyQRCode crunchifyQRCode = new CrunchifyQRCode();
+
+        try {
+            crunchifyQRCode.createQRImage1(response.getOutputStream(),myCodeText,size,fileType);
+        } catch (WriterException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("\n\nYou have successfully created QR Code.");
 
     }
 }
