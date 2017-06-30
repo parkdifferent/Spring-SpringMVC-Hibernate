@@ -20,4 +20,6 @@ public interface TestService {
     void deleteById(Long id);
 
     List<Test> findAll();
+
+    List<Test> findAll1();
 }

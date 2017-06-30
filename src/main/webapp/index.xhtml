@@ -12,17 +12,17 @@
 
         <p:dataTable id="dataTable" var="test" lazy="true"
                      paginatorAlwaysVisible="false" value="#{testPrimefacesController.testModel}"
-                     rows="10" emptyMessage="#{string.no_record_found}"
+                     rows="10" emptyMessage="111"
                      paginator="true" styleClass="TexAlCenter"
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                      rowsPerPageTemplate="10,15,50" reflow="true">
             <f:facet name="header">
-                <h:outputLabel styleClass="Fs15 FontBold" value="#{string.test}" />
+                <h:outputLabel styleClass="Fs15 FontBold" value="222" />
             </f:facet>
 
 
-            <p:column headerText="id">
-                <h:outputText value="#{test.title}" />
+            <p:column headerText="#{string.test}">
+                <h:outputText value="#{test.id}" />
             </p:column>
             <p:column headerText="firstName">
                 <h:outputText value="#{test.firstName}" />
@@ -30,8 +30,6 @@
             <p:column headerText="secondName">
                 <h:outputText value="#{test.secondName}" />
             </p:column>
-
-
 
         </p:dataTable>
     </h:form>

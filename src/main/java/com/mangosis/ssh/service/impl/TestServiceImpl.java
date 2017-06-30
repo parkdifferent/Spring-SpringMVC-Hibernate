@@ -15,7 +15,7 @@ import java.util.List;
  * Created by admin on 2017/5/9.
  */
 
-@Service("testService")
+@Service("testServiceImpl")
 public class TestServiceImpl implements TestService {
 
     private  static Logger logger = LoggerFactory.getLogger("TestServiceImpl");
@@ -72,5 +72,10 @@ public class TestServiceImpl implements TestService {
     @Override
     public List<Test> findAll() {
         return (List<Test>) testDao.findAll();
+    }
+
+    @Override
+    public List<Test> findAll1() {
+        return (List<Test>) testDao.findOne((long) 8);
     }
 }

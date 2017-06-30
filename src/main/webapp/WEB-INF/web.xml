@@ -21,7 +21,7 @@
     </listener>
 
     <!-- 配置springmvc -->
-    <servlet>
+    <!--<servlet>
         <servlet-name>springMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
@@ -32,13 +32,13 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springMVC</servlet-name>
-        <!--<url-pattern>/</url-pattern>-->
-        <!--
+        &lt;!&ndash;<url-pattern>/</url-pattern>&ndash;&gt;
+        &lt;!&ndash;
         	可行：/、*.xxx、/xxx/*
         	不行：/*
-         -->
+         &ndash;&gt;
         <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
 
     <!-- 解决PUT请求无法提交表单数据的问题 -->
@@ -98,6 +98,26 @@
 
     <!--begin primefaces-->
 
+    <context-param>
+        <param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>home</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/faces-config.xml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+
+
+
+
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -107,9 +127,10 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/faces/*</url-pattern>
+        <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
 
 
@@ -118,7 +139,7 @@
     </welcome-file-list>-->
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
 
 

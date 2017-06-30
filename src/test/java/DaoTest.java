@@ -1,6 +1,7 @@
 import com.mangosis.ssh.dao.TestDao;
 import com.mangosis.ssh.dao.TestDaoCustom;
 import com.mangosis.ssh.entity.Test;
+import com.mangosis.ssh.service.MyTestService;
 import com.mangosis.ssh.service.TestService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,17 @@ public class DaoTest {
     @Qualifier("testDaoImpl")
     @Autowired
     TestDaoCustom testDaoCustom;
+
+    @Autowired
+    MyTestService myTestService;
+
+    @org.junit.Test
+    public void testFindAll() {
+      List<Test> list  = myTestService.findAll();
+        for (int i = 0;i <list.size();i++) {
+            System.out.println(list.get(i));
+        }
+    }
 
 
 
