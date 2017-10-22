@@ -1,7 +1,7 @@
 package com.mangosis.ssh.servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * Created by admin on 2017/6/1.
  */
 
-@WebServlet("/HelloWorld")
+/*@WebServlet("/HelloWorld")*/
 public class HelloWorld extends HttpServlet {
 
     @Override
